@@ -1,0 +1,23 @@
+{
+  "name": "reatime-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./index.ts",
+    "start:prod": "node ./dist/index.js",
+    "package": "pkg ./dist/index.js --targets node16-linux-x64,node16-macos-x64,node16-win,node16-linux-arm64 --out-path ./executables/",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
