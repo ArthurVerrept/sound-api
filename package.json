@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./index.ts",
-    "start:prod": "node ./dist/index.js",
+    "start:dev": "nodemon ./server.ts",
+    "start:prod": "node ./dist/server.js",
     "package": "pkg ./dist/index.js --targets node16-linux-x64,node16-macos-x64,node16-win,node16-linux-arm64 --out-path ./executables/",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/multer": "^1.4.7",
+    "express": "^4.17.3",
+    "multer": "^1.4.4",
     "socket.io": "^4.4.1"
   },
   "devDependencies": {
