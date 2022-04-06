@@ -1,7 +1,7 @@
 import { createServer } from 'http'
 import { Server } from 'socket.io'
 import express from 'express'
-import routes from './routes/index'
+import initializeRoutes from './routes/index'
 import path from 'path'
 
 const port = 3000
@@ -9,7 +9,7 @@ const port = 3000
 const app = express()
 app.use(express.urlencoded({ extended: true }))
 
-routes(app)
+initializeRoutes(app)
 const httpServer = createServer(app)
 
 const io = new Server(httpServer, {
