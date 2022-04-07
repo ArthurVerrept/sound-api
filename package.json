@@ -6,6 +6,7 @@
   "scripts": {
     "start:dev": "nodemon ./server.ts",
     "start:prod": "node ./dist/server.js",
+    "start:arduino": "nodemon ./mock-arduino/server.ts",
     "package": "pkg ./dist/index.js --targets node16-linux-x64,node16-macos-x64,node16-win,node16-linux-arm64 --out-path ./executables/",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,7 @@
     "@types/multer": "^1.4.7",
     "express": "^4.17.3",
     "multer": "^1.4.4",
+    "osc-js": "^2.3.1",
     "socket.io": "^4.4.1"
   },
   "devDependencies": {

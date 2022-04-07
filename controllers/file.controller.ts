@@ -3,7 +3,7 @@ import fs from 'fs'
 import express from 'express'
 import { FilesList } from '../types/files'
 import path from 'path'
-const baseUrl = 'http://localhost:8080/files/'
+const baseUrl = 'http://localhost:3000/files/'
 const __baseUrl = path.join(__dirname, '../')
 
 async function upload(req: express.Request, res: express.Response) {

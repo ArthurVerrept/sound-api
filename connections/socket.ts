@@ -1,4 +1,5 @@
 import socket from 'socket.io'
+const OSC = require('osc-js')
 import http from 'http'
 
 function startSocket(httpServer: http.Server) {
@@ -31,6 +32,7 @@ function startSocket(httpServer: http.Server) {
           io.emit('velocity', data)
         })
     })
+    return io
 }
 
 export default startSocket
