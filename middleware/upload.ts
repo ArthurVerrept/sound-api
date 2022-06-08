@@ -8,14 +8,15 @@ let storage = multer.diskStorage({
     cb(null, __baseUrl + '/resources/static/assets/uploads/')
   },
   filename: (req, file, cb) => {
-    console.log(file)
-    console.log(file.originalname)
+    if (file.originalname.includes(' ')) {
+      file.originalname = file.originalname.replace(/\s+/g, '-').toLowerCase();
+    }
     cb(null, file.originalname)
   },
 })
 let uploadFile = multer({
   storage: storage
   // limits: { fileSize: maxSize },
-}).single('file')
+}).array('file', 100)
 let uploadFileMiddleware = util.promisify(uploadFile)
 export default uploadFileMiddleware

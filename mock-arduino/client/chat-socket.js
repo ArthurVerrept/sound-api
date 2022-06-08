@@ -1,7 +1,7 @@
-const socket = io('http://localhost:3500', { query: "name=arduino" })
+const socket = io('http://localhost:3000', { query: "name=arduino" })
 
-const interval = setInterval(function() {
-    // method to be executed;
-    const val = document.getElementById('sendValue').value
-    socket.emit('velocity', {velocity: val})
-  }, 50);
+const interval = setInterval(function () {
+  // method to be executed;
+  const val = document.getElementById('sendValue').value
+  socket.emit('velocity', val)
+}, 50);
